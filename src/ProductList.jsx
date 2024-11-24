@@ -1,8 +1,8 @@
 import React, { useState,useEffect,useReducer } from 'react';
 import './ProductList.css'
 import { useDispatch, useSelector } from 'react-redux';
-import CartItem from './CartItem';
-import { addItem } from './CartSlice'; // Note: Do NOT write this as import addItem from './CartSlice'
+import CartItem from './CartItem.jsx';
+import { addItem } from './CartSlice.jsx'; // Note: Do NOT write this as import addItem from './CartSlice'
 
 function ProductList() {
 
