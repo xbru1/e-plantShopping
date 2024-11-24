@@ -9692,7 +9692,7 @@ const CartSlice = createSlice({
       }
     },
     removeItem: (state, action) => {
-      state.items = state.items.filter((item) => item.name !== action.payload);
+      state.items = state.items.filter((item) => item.name !== action.payload.name);
     },
     updateQuantity: (state, action) => {
       const { name, quantity } = action.payload;
@@ -9729,7 +9729,7 @@ const CartItem = ({ onContinueShopping }) => {
     dispatch(updateQuantity({ name: item.name, quantity: item.quantity - 1 }));
   };
   const handleRemove = (item) => {
-    dispatch(removeItem, item);
+    dispatch(removeItem({ name: item.name }));
   };
   const calculateTotalCost = (item) => {
     return parseInt(item.cost.replace("$", "")) * item.quantity;
